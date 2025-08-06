@@ -28,7 +28,7 @@ export const Colors = {
   overlay: "rgba(0, 0, 0, 0.8)",
   
   // Gradients
-  gradientPrimary: ["#00D4FF", "#7C3AED"],
-  gradientSecondary: ["#FF006E", "#FFB800"],
-  gradientAccent: ["#00FFA3", "#00D4FF"],
+  gradientPrimary: ["#00D4FF", "#7C3AED"] as const,
+  gradientSecondary: ["#FF006E", "#FFB800"] as const,
+  gradientAccent: ["#00FFA3", "#00D4FF"] as const,
 };
