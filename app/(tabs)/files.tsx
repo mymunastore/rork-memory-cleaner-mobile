@@ -531,7 +531,7 @@ export default function FilesScreen() {
                   title={category.name}
                   size={category.size}
                   count={category.count}
-                  icon={category.icon as any}
+                  icon={category.icon}
                   color={category.color}
                   onPress={() => setSelectedCategory(category.id)}
                   testID={`category-card-${category.id}`}
