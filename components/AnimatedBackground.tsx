@@ -17,8 +17,8 @@ interface AnimatedBackgroundProps {
 export default function AnimatedBackground({ children }: AnimatedBackgroundProps) {
   const floatingAnims = useRef(
     Array.from({ length: 8 }, () => ({
-      x: new Animated.Value(Math.random() * width),
-      y: new Animated.Value(Math.random() * height),
+      translateX: new Animated.Value(Math.random() * width - width / 2),
+      translateY: new Animated.Value(Math.random() * height - height / 2),
       opacity: new Animated.Value(0.1),
       scale: new Animated.Value(0.5),
     }))
@@ -30,15 +30,15 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
         Animated.loop(
           Animated.sequence([
             Animated.parallel([
-              Animated.timing(anim.x, {
-                toValue: Math.random() * width,
+              Animated.timing(anim.translateX, {
+                toValue: Math.random() * width - width / 2,
                 duration: 8000 + index * 1000,
-                useNativeDriver: false,
+                useNativeDriver: true,
               }),
-              Animated.timing(anim.y, {
-                toValue: Math.random() * height,
+              Animated.timing(anim.translateY, {
+                toValue: Math.random() * height - height / 2,
                 duration: 8000 + index * 1000,
-                useNativeDriver: false,
+                useNativeDriver: true,
               }),
               Animated.timing(anim.opacity, {
                 toValue: 0.3,
@@ -84,10 +84,12 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
             style={[
               styles.floatingElement,
               {
-                left: anim.x,
-                top: anim.y,
                 opacity: anim.opacity,
-                transform: [{ scale: anim.scale }],
+                transform: [
+                  { translateX: anim.translateX },
+                  { translateY: anim.translateY },
+                  { scale: anim.scale }
+                ],
               },
             ]}
           >
@@ -113,6 +115,8 @@ const styles = StyleSheet.create({
   },
   floatingElement: {
     position: 'absolute',
+    left: '50%',
+    top: '50%',
     width: 100,
     height: 100,
   },

@@ -24,8 +24,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const glowAnim = useRef(new Animated.Value(0)).current;
   const particleAnims = useRef(
     Array.from({ length: 20 }, () => ({
-      x: new Animated.Value(Math.random() * width),
-      y: new Animated.Value(Math.random() * height),
+      translateX: new Animated.Value(Math.random() * width - width / 2),
+      translateY: new Animated.Value(Math.random() * height - height / 2),
       opacity: new Animated.Value(0),
       scale: new Animated.Value(0),
     }))
@@ -153,10 +153,12 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
             style={[
               styles.particle,
               {
-                left: particle.x,
-                top: particle.y,
                 opacity: particle.opacity,
-                transform: [{ scale: particle.scale }],
+                transform: [
+                  { translateX: particle.translateX },
+                  { translateY: particle.translateY },
+                  { scale: particle.scale }
+                ],
               },
             ]}
           />
@@ -253,6 +255,8 @@ const styles = StyleSheet.create({
   },
   particle: {
     position: 'absolute',
+    left: '50%',
+    top: '50%',
     width: 4,
     height: 4,
     borderRadius: 2,
