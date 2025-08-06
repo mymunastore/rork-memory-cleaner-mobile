@@ -24,8 +24,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const glowAnim = useRef(new Animated.Value(0)).current;
   const particleAnims = useRef(
     Array.from({ length: 20 }, () => ({
-      translateX: new Animated.Value(Math.random() * width - width / 2),
-      translateY: new Animated.Value(Math.random() * height - height / 2),
+      translateX: new Animated.Value((Math.random() - 0.5) * width * 0.8),
+      translateY: new Animated.Value((Math.random() - 0.5) * height * 0.8),
       opacity: new Animated.Value(0),
       scale: new Animated.Value(0),
     }))
