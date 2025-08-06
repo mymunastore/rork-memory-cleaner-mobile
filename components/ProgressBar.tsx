@@ -25,7 +25,8 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     if (color === Colors.accent) return Colors.gradientAccent;
     if (color === Colors.warning) return Colors.gradientSecondary;
     if (color === Colors.primary) return Colors.gradientPrimary;
-    return [color, color] as const;
+    if (color === Colors.danger) return Colors.gradientSecondary;
+    return Colors.gradientPrimary;
   };
 
   return (

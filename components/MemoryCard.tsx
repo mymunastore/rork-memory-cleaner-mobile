@@ -44,7 +44,7 @@ export const MemoryCard: React.FC<MemoryCardProps> = ({
         <LinearGradient
           colors={statusColor === Colors.accent ? Colors.gradientAccent : 
                  statusColor === Colors.warning ? Colors.gradientSecondary : 
-                 [statusColor, statusColor] as const}
+                 Colors.gradientPrimary}
           style={styles.statusBadge}
         >
           <Text style={styles.statusText}>{statusText}</Text>

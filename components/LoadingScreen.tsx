@@ -143,7 +143,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
       <LinearGradient
-        colors={[Colors.background, Colors.backgroundSecondary, Colors.background] as const}
+        colors={[Colors.background, Colors.backgroundSecondary, Colors.background]}
         style={styles.gradient}
       >
         {/* Animated Particles */}
