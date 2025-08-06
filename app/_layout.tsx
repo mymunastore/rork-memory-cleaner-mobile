@@ -4,6 +4,7 @@ import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import LoadingScreen from "@/components/LoadingScreen";
 import { trpc, trpcClient } from "@/lib/trpc";
 
@@ -15,6 +16,8 @@ const queryClient = new QueryClient();
 function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerBackTitle: "Back" }}>
+      <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+      <Stack.Screen name="boost-results" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
@@ -22,10 +25,22 @@ function RootLayoutNav() {
 
 export default function RootLayout() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
+    checkOnboardingStatus();
     SplashScreen.hideAsync();
   }, []);
+
+  const checkOnboardingStatus = async () => {
+    try {
+      const hasSeenOnboarding = await AsyncStorage.getItem('hasSeenOnboarding');
+      setShowOnboarding(!hasSeenOnboarding);
+    } catch (error) {
+      console.error('Error checking onboarding status:', error);
+      setShowOnboarding(true);
+    }
+  };
 
   const handleLoadingComplete = () => {
     setIsLoading(false);

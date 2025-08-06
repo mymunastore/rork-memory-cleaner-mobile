@@ -1,16 +1,15 @@
 import { Tabs } from "expo-router";
-import { Home, HardDrive, Settings, Brain } from "lucide-react-native";
+import { Home, Zap, HardDrive, Settings, Smartphone, Battery } from "lucide-react-native";
 import React from "react";
 import { MemoryProvider } from "@/hooks/useMemoryStore";
 import { Colors } from "@/constants/colors";
-
 
 export default function TabLayout() {
   return (
     <MemoryProvider>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: Colors.glow,
+          tabBarActiveTintColor: Colors.accent,
           tabBarInactiveTintColor: Colors.textMuted,
           tabBarStyle: {
             backgroundColor: Colors.surface,
@@ -39,10 +38,24 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="ai"
+          name="scan"
           options={{
-            title: "AI Assistant",
-            tabBarIcon: ({ color }) => <Brain color={color} size={24} />,
+            title: "Smart Scan",
+            tabBarIcon: ({ color }) => <Zap color={color} size={24} />,
+          }}
+        />
+        <Tabs.Screen
+          name="apps"
+          options={{
+            title: "App Manager",
+            tabBarIcon: ({ color }) => <Smartphone color={color} size={24} />,
+          }}
+        />
+        <Tabs.Screen
+          name="battery"
+          options={{
+            title: "Battery",
+            tabBarIcon: ({ color }) => <Battery color={color} size={24} />,
           }}
         />
         <Tabs.Screen
