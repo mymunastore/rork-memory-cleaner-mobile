@@ -31,7 +31,7 @@ import { ActionButton } from '@/components/ActionButton';
 import { ProgressBar } from '@/components/ProgressBar';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { formatFileSize } from '@/utils/fileSize';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface QuickAction {
   id: string;

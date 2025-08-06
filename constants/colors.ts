@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
   // Premium Glo Colors
   primary: "#00D4FF",
   primaryGradientEnd: "#7C3AED",
@@ -32,3 +32,5 @@ export const Colors = {
   gradientSecondary: ["#FF006E", "#FFB800"] as const,
   gradientAccent: ["#00FFA3", "#00D4FF"] as const,
 };
+
+export default Colors;

@@ -31,7 +31,7 @@ import { useMemory } from '@/hooks/useMemoryStore';
 import { FileItem } from '@/components/FileItem';
 import { CategoryCard } from '@/components/CategoryCard';
 import { formatFileSize } from '@/utils/fileSize';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 import AnimatedBackground from '@/components/AnimatedBackground';
 
 interface FileCategory {

@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { ProgressBar } from './ProgressBar';
 import PremiumCard from './PremiumCard';
 import { formatFileSize } from '@/utils/fileSize';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface MemoryCardProps {
   totalMemory: number;
