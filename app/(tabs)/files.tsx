@@ -63,6 +63,14 @@ interface DuplicateGroup {
   canSave: number;
 }
 
+const getFileIcon = (type: string): string => {
+  if (type.startsWith('image/')) return 'image';
+  if (type.startsWith('video/')) return 'video';
+  if (type.startsWith('audio/')) return 'music';
+  if (type.includes('zip') || type.includes('archive')) return 'archive';
+  return 'document';
+};
+
 export default function FilesScreen() {
   const { memoryStats } = useMemory();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -523,7 +531,7 @@ export default function FilesScreen() {
                   title={category.name}
                   size={category.size}
                   count={category.count}
-                  icon={category.icon}
+                  icon={category.icon as any}
                   color={category.color}
                   onPress={() => setSelectedCategory(category.id)}
                   testID={`category-card-${category.id}`}
@@ -561,8 +569,8 @@ export default function FilesScreen() {
                       name={file.name}
                       size={file.size}
                       type={file.type}
-                      path={file.path}
-                      lastModified={file.lastModified}
+                      date={file.lastModified.toISOString()}
+                      icon={getFileIcon(file.type)}
                     />
                     {file.isDuplicate && (
                       <View style={styles.duplicateBadge}>
