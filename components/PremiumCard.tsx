@@ -7,13 +7,13 @@ import {
   ViewStyle,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface PremiumCardProps {
   children: React.ReactNode;
   style?: ViewStyle;
   onPress?: () => void;
-  glowColor?: string;
+  gloColor?: string;
   animated?: boolean;
   testID?: string;
 }
@@ -22,25 +22,25 @@ export default function PremiumCard({
   children,
   style,
   onPress,
-  glowColor = Colors.glow,
+  gloColor = Colors.glo,
   animated = true,
   testID,
 }: PremiumCardProps) {
   const scaleAnim = useRef(new Animated.Value(1)).current;
-  const glowAnim = useRef(new Animated.Value(0.3)).current;
+  const gloAnim = useRef(new Animated.Value(0.3)).current;
   const rotateAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     if (animated) {
-      // Subtle glow animation
+      // Subtle glo animation
       Animated.loop(
         Animated.sequence([
-          Animated.timing(glowAnim, {
+          Animated.timing(gloAnim, {
             toValue: 0.8,
             duration: 2000,
             useNativeDriver: true,
           }),
-          Animated.timing(glowAnim, {
+          Animated.timing(gloAnim, {
             toValue: 0.3,
             duration: 2000,
             useNativeDriver: true,
@@ -57,7 +57,7 @@ export default function PremiumCard({
         })
       ).start();
     }
-  }, [animated, glowAnim, rotateAnim]);
+  }, [animated, gloAnim, rotateAnim]);
 
   const handlePressIn = () => {
     Animated.spring(scaleAnim, {
@@ -89,19 +89,19 @@ export default function PremiumCard({
       ]}
       testID={testID}
     >
-      {/* Rotating Glow Background */}
+      {/* Rotating Glo Background */}
       <Animated.View
         style={[
-          styles.glowBackground,
+          styles.gloBackground,
           {
-            opacity: glowAnim,
+            opacity: gloAnim,
             transform: [{ rotate }],
           },
         ]}
       >
         <LinearGradient
-          colors={[glowColor, 'transparent', glowColor]}
-          style={styles.glowGradient}
+          colors={[gloColor, 'transparent', gloColor]}
+          style={styles.gloGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
         />
@@ -112,7 +112,7 @@ export default function PremiumCard({
         colors={[Colors.card, Colors.surface]}
         style={styles.cardGradient}
       >
-        <View style={styles.innerGlow} />
+        <View style={styles.innerGlo} />
         {children}
       </LinearGradient>
     </Animated.View>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 8,
   },
-  glowBackground: {
+  gloBackground: {
     position: 'absolute',
     top: -2,
     left: -2,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     bottom: -2,
     borderRadius: 22,
   },
-  glowGradient: {
+  gloGradient: {
     flex: 1,
     borderRadius: 22,
   },
@@ -157,14 +157,14 @@ const styles = StyleSheet.create({
     padding: 20,
     borderWidth: 1,
     borderColor: Colors.border,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.4,
     shadowRadius: 15,
     elevation: 8,
     position: 'relative',
   },
-  innerGlow: {
+  innerGlo: {
     position: 'absolute',
     top: 0,
     left: 0,

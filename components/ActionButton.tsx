@@ -8,7 +8,7 @@ import {
   TextStyle,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface ActionButtonProps {
   title: string;
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     overflow: 'hidden',
     marginVertical: 8,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.6,
     shadowRadius: 12,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 8,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.6,
     shadowRadius: 12,

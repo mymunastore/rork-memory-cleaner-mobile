@@ -14,9 +14,9 @@ const Colors = {
   surface: "#0F1419",
   
   // Glo Effects
-  glow: "#00D4FF",
-  glowSecondary: "#7C3AED",
-  glowAccent: "#00FFA3",
+  glo: "#00D4FF",
+  gloSecondary: "#7C3AED",
+  gloAccent: "#00FFA3",
   
   // Text
   text: "#FFFFFF",

@@ -18,7 +18,7 @@ import {
 } from 'lucide-react-native';
 import { router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 import AnimatedBackground from '@/components/AnimatedBackground';
 
 const { width } = Dimensions.get('window');
@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     fontWeight: '700' as const,
     color: Colors.text,
     marginBottom: 8,
-    textShadowColor: Colors.glow,
+    textShadowColor: Colors.glo,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 12,
   },

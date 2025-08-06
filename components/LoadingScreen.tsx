@@ -21,7 +21,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const scaleAnim = useRef(new Animated.Value(0.8)).current;
   const progressAnim = useRef(new Animated.Value(0)).current;
   const logoRotateAnim = useRef(new Animated.Value(0)).current;
-  const glowAnim = useRef(new Animated.Value(0)).current;
+  const gloAnim = useRef(new Animated.Value(0)).current;
   const particleAnims = useRef(
     Array.from({ length: 20 }, () => ({
       translateX: new Animated.Value((Math.random() - 0.5) * width * 0.8),
@@ -39,7 +39,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         useNativeDriver: true,
       }).start();
 
-      // Logo scale and glow
+      // Logo scale and glo
       Animated.parallel([
         Animated.timing(scaleAnim, {
           toValue: 1,
@@ -48,12 +48,12 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         }),
         Animated.loop(
           Animated.sequence([
-            Animated.timing(glowAnim, {
+            Animated.timing(gloAnim, {
               toValue: 1,
               duration: 1500,
               useNativeDriver: true,
             }),
-            Animated.timing(glowAnim, {
+            Animated.timing(gloAnim, {
               toValue: 0,
               duration: 1500,
               useNativeDriver: true,
@@ -119,7 +119,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
           });
         }, 500);
       });
-  }, [fadeAnim, scaleAnim, glowAnim, logoRotateAnim, particleAnims, progressAnim, onLoadingComplete]);
+  }, [fadeAnim, scaleAnim, gloAnim, logoRotateAnim, particleAnims, progressAnim, onLoadingComplete]);
 
   useEffect(() => {
     startAnimation();
@@ -135,7 +135,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     outputRange: ['0%', '100%'],
   });
 
-  const glowOpacity = glowAnim.interpolate({
+  const gloOpacity = gloAnim.interpolate({
     inputRange: [0, 1],
     outputRange: [0.3, 1],
   });
@@ -177,9 +177,9 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
           >
             <Animated.View
               style={[
-                styles.logoGlow,
+                styles.logoGlo,
                 {
-                  opacity: glowOpacity,
+                  opacity: gloOpacity,
                 },
               ]}
             >
@@ -260,8 +260,8 @@ const styles = StyleSheet.create({
     width: 4,
     height: 4,
     borderRadius: 2,
-    backgroundColor: Colors.glow,
-    shadowColor: Colors.glow,
+    backgroundColor: Colors.glo,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 4,
@@ -276,8 +276,8 @@ const styles = StyleSheet.create({
   logoContainer: {
     marginBottom: 40,
   },
-  logoGlow: {
-    shadowColor: Colors.glow,
+  logoGlo: {
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 30,
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: Colors.glow,
+    borderColor: Colors.glo,
   },
   brandContainer: {
     alignItems: 'center',
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     color: Colors.text,
     letterSpacing: 2,
     textAlign: 'center',
-    textShadowColor: Colors.glow,
+    textShadowColor: Colors.glo,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 10,
   },
@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
   },
   progressGradient: {
     flex: 1,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 8,

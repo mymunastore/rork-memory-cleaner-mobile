@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface ProgressBarProps {
   progress: number;
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 8,
     overflow: 'hidden',
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   progress: {
     height: '100%',
     borderRadius: 8,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
     shadowRadius: 6,

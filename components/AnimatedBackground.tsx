@@ -77,7 +77,7 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
         colors={[Colors.background, Colors.backgroundSecondary, Colors.background] as const}
         style={styles.gradient}
       >
-        {/* Floating Glow Elements */}
+        {/* Floating Glo Elements */}
         {floatingAnims.map((anim, index) => (
           <Animated.View
             key={index}
@@ -94,8 +94,8 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
             ]}
           >
             <LinearGradient
-              colors={[Colors.glow, 'transparent'] as const}
-              style={styles.glowCircle}
+              colors={[Colors.glo, 'transparent'] as const}
+              style={styles.gloCircle}
             />
           </Animated.View>
         ))}
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  glowCircle: {
+  gloCircle: {
     width: '100%',
     height: '100%',
     borderRadius: 50,

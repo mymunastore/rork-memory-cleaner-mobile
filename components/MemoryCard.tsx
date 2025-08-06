@@ -35,9 +35,9 @@ export const MemoryCard: React.FC<MemoryCardProps> = ({
   return (
     <PremiumCard 
       testID={testID}
-      glowColor={statusColor === Colors.accent ? Colors.glowAccent : 
+      gloColor={statusColor === Colors.accent ? Colors.gloAccent : 
                 statusColor === Colors.warning ? Colors.secondary : 
-                Colors.glow}
+                Colors.glo}
     >
       <View style={styles.header}>
         <Text style={styles.title}>MEMORY STATUS</Text>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: '800' as const,
     color: Colors.text,
     letterSpacing: 1,
-    textShadowColor: Colors.glow,
+    textShadowColor: Colors.glo,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 8,
   },
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 16,
-    shadowColor: Colors.glow,
+    shadowColor: Colors.glo,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
     shadowRadius: 8,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700' as const,
     color: Colors.text,
-    textShadowColor: Colors.glow,
+    textShadowColor: Colors.glo,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 4,
   },
