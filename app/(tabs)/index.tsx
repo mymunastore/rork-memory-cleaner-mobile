@@ -68,7 +68,7 @@ export default function DashboardScreen() {
       icon: Zap,
       color: Colors.primary,
       route: '/scan',
-      gradient: [Colors.gradientPrimary[0], Colors.gradientPrimary[1]] as const,
+      gradient: Colors.gradientPrimary,
     },
     {
       id: '2',
@@ -77,7 +77,7 @@ export default function DashboardScreen() {
       icon: Smartphone,
       color: Colors.accent,
       route: '/apps',
-      gradient: [Colors.gradientAccent[0], Colors.gradientAccent[1]] as const,
+      gradient: Colors.gradientAccent,
     },
     {
       id: '3',
@@ -86,7 +86,7 @@ export default function DashboardScreen() {
       icon: Battery,
       color: Colors.warning,
       route: '/battery',
-      gradient: [Colors.gradientSecondary[0], Colors.gradientSecondary[1]] as const,
+      gradient: Colors.gradientSecondary,
     },
     {
       id: '4',
@@ -95,7 +95,7 @@ export default function DashboardScreen() {
       icon: HardDrive,
       color: Colors.textSecondary,
       route: '/files',
-      gradient: [Colors.textSecondary, Colors.border] as const,
+      gradient: [Colors.textSecondary, Colors.border],
     },
   ];
   
@@ -136,7 +136,7 @@ export default function DashboardScreen() {
           {/* Performance Score */}
           <View style={styles.performanceCard}>
             <LinearGradient
-              colors={[Colors.gradientPrimary[0], Colors.gradientPrimary[1]]}
+              colors={Colors.gradientPrimary}
               style={styles.performanceGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}

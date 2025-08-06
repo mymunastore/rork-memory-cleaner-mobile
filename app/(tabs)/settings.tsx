@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 import { 
   Bell, 
   Clock, 

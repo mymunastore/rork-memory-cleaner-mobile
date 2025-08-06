@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import { View, Text, StyleSheet, Animated, Easing } from 'react-native';
 import { Circle, RefreshCw } from 'lucide-react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/colors';
 
 interface ScanButtonProps {
   onPress: () => void;
