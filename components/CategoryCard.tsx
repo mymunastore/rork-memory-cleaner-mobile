@@ -7,7 +7,11 @@ import {
   AppWindow, 
   FileText, 
   Settings,
-  ChevronRight
+  ChevronRight,
+  Video,
+  Music,
+  Archive,
+  Copy
 } from 'lucide-react-native';
 
 interface CategoryCardProps {
@@ -34,6 +38,14 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
     switch (icon) {
       case 'image':
         return <Image size={24} color="white" />;
+      case 'video':
+        return <Video size={24} color="white" />;
+      case 'music':
+        return <Music size={24} color="white" />;
+      case 'archive':
+        return <Archive size={24} color="white" />;
+      case 'copy':
+        return <Copy size={24} color="white" />;
       case 'app-store':
         return <AppWindow size={24} color="white" />;
       case 'file-text':

@@ -71,6 +71,25 @@ const getFileIcon = (type: string): string => {
   return 'document';
 };
 
+const getIconName = (categoryId: string): string => {
+  switch (categoryId) {
+    case 'images':
+      return 'image';
+    case 'videos':
+      return 'video';
+    case 'music':
+      return 'music';
+    case 'documents':
+      return 'file-text';
+    case 'archives':
+      return 'archive';
+    case 'duplicates':
+      return 'copy';
+    default:
+      return 'file-text';
+  }
+};
+
 export default function FilesScreen() {
   const { memoryStats } = useMemory();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -528,10 +547,10 @@ export default function FilesScreen() {
               {categories.map((category) => (
                 <CategoryCard
                   key={category.id}
-                  title={category.name}
+                  name={category.name}
                   size={category.size}
                   count={category.count}
-                  icon={category.icon}
+                  icon={getIconName(category.id)}
                   color={category.color}
                   onPress={() => setSelectedCategory(category.id)}
                   testID={`category-card-${category.id}`}
