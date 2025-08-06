@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { formatFileSize } from '@/utils/fileSize';
-import Colors from '@/constants/colors';
+import { Colors } from '@/constants/colors';
 import { 
   Image, 
   AppWindow, 

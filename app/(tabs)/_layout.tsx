@@ -2,7 +2,7 @@ import { Tabs } from "expo-router";
 import { Home, Zap, HardDrive, Settings, Smartphone, Battery } from "lucide-react-native";
 import React from "react";
 import { MemoryProvider } from "@/hooks/useMemoryStore";
-import Colors from '@/constants/colors';
+import { Colors } from "@/constants/colors";
 
 export default function TabLayout() {
   return (

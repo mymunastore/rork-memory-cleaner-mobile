@@ -74,7 +74,7 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={[Colors.background, Colors.backgroundSecondary, Colors.background]}
+        colors={[Colors.background, Colors.backgroundSecondary, Colors.background] as const}
         style={styles.gradient}
       >
         {/* Floating Glo Elements */}
@@ -94,7 +94,7 @@ export default function AnimatedBackground({ children }: AnimatedBackgroundProps
             ]}
           >
             <LinearGradient
-              colors={[Colors.glo, 'transparent']}
+              colors={[Colors.glo, 'transparent'] as const}
               style={styles.gloCircle}
             />
           </Animated.View>

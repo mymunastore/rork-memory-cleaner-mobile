@@ -42,9 +42,9 @@ export const MemoryCard: React.FC<MemoryCardProps> = ({
       <View style={styles.header}>
         <Text style={styles.title}>MEMORY STATUS</Text>
         <LinearGradient
-          colors={statusColor === Colors.accent ? Colors.gradientAccent : 
-                 statusColor === Colors.warning ? Colors.gradientSecondary : 
-                 Colors.gradientPrimary}
+          colors={statusColor === Colors.accent ? [Colors.gradientAccent[0], Colors.gradientAccent[1]] : 
+                 statusColor === Colors.warning ? [Colors.gradientSecondary[0], Colors.gradientSecondary[1]] : 
+                 [Colors.gradientPrimary[0], Colors.gradientPrimary[1]]}
           style={styles.statusBadge}
         >
           <Text style={styles.statusText}>{statusText}</Text>
