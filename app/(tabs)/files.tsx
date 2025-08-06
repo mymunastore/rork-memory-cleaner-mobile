@@ -403,7 +403,7 @@ export default function FilesScreen() {
           {/* Storage Overview */}
           <View style={styles.storageOverview}>
             <LinearGradient
-              colors={Colors.gradientPrimary}
+              colors={[Colors.gradientPrimary[0], Colors.gradientPrimary[1]]}
               style={styles.storageGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
@@ -588,6 +588,7 @@ export default function FilesScreen() {
                       name={file.name}
                       size={file.size}
                       type={file.type}
+                      path={file.path}
                       date={file.lastModified.toISOString()}
                       icon={getFileIcon(file.type)}
                     />

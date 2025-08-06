@@ -143,7 +143,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
       <LinearGradient
-        colors={[Colors.background, Colors.backgroundSecondary, Colors.background]}
+        colors={[Colors.background, Colors.backgroundSecondary, Colors.background] as const}
         style={styles.gradient}
       >
         {/* Animated Particles */}
@@ -184,7 +184,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               ]}
             >
               <LinearGradient
-                colors={Colors.gradientPrimary}
+                colors={[Colors.gradientPrimary[0], Colors.gradientPrimary[1]]}
                 style={styles.logoBackground}
               >
                 <Zap size={60} color={Colors.text} strokeWidth={2} />
@@ -226,7 +226,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
                 ]}
               >
                 <LinearGradient
-                  colors={Colors.gradientPrimary}
+                  colors={[Colors.gradientPrimary[0], Colors.gradientPrimary[1]]}
                   style={styles.progressGradient}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}

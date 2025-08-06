@@ -8,6 +8,7 @@ interface FileItemProps {
   name: string;
   type: string;
   size: number;
+  path: string;
   date: string;
   icon: string;
   onPress?: () => void;
@@ -18,6 +19,7 @@ export const FileItem: React.FC<FileItemProps> = ({
   name,
   type,
   size,
+  path,
   date,
   icon,
   onPress,
