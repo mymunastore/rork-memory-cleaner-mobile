@@ -403,7 +403,7 @@ export default function FilesScreen() {
           {/* Storage Overview */}
           <View style={styles.storageOverview}>
             <LinearGradient
-              colors={Colors.gradientPrimary}
+              colors={Colors.gradientPrimary as readonly [string, string, ...string[]]}
               style={styles.storageGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}

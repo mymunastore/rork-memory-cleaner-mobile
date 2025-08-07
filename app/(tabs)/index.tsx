@@ -136,7 +136,7 @@ export default function DashboardScreen() {
           {/* Performance Score */}
           <View style={styles.performanceCard}>
             <LinearGradient
-              colors={Colors.gradientPrimary}
+              colors={Colors.gradientPrimary as readonly [string, string, ...string[]]}
               style={styles.performanceGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
@@ -179,7 +179,7 @@ export default function DashboardScreen() {
                   testID={`quick-action-${action.id}`}
                 >
                   <LinearGradient
-                    colors={action.gradient}
+                    colors={action.gradient as readonly [string, string, ...string[]]}
                     style={styles.quickActionGradient}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}

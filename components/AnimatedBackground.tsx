@@ -119,6 +119,8 @@ const styles = StyleSheet.create({
     top: '50%',
     width: 100,
     height: 100,
+    marginLeft: -50,
+    marginTop: -50,
   },
   gloCircle: {
     width: '100%',

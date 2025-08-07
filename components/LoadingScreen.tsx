@@ -184,7 +184,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               ]}
             >
               <LinearGradient
-                colors={Colors.gradientPrimary}
+                colors={Colors.gradientPrimary as readonly [string, string, ...string[]]}
                 style={styles.logoBackground}
               >
                 <Zap size={60} color={Colors.text} strokeWidth={2} />
@@ -226,7 +226,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
                 ]}
               >
                 <LinearGradient
-                  colors={Colors.gradientPrimary}
+                  colors={Colors.gradientPrimary as readonly [string, string, ...string[]]}
                   style={styles.progressGradient}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}
@@ -266,6 +266,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
     elevation: 4,
+    marginLeft: -2,
+    marginTop: -2,
   },
   content: {
     flex: 1,
